@@ -75,7 +75,7 @@ def load_artifacts():
 dtc_model, poly_maker, lasso_model, scaler_class, expected_cols_class, scaler_poly, expected_cols_poly = load_artifacts()
 
 # --- 3. UI: APP HEADER ---
-st.title("🏦 Institutional Loan Risk Dashboard")
+st.title("🏦 Bucknell Lending Club - Loan Risk Dashboard 🦬")
 st.markdown("Enter the applicant's financial details below to simulate the probability of default and projected return.")
 st.divider()
 
