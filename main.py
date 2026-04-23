@@ -20,37 +20,86 @@ PROFIT_THRESHOLD = 0.30
 st.markdown(
     """
     <style>
-    /* Main background color */
+    /* Overall App Background */
     .stApp {
-        background-color: #f0f2f6; /* A light grey for overall app background */
+        background-color: #f0f2f6;
+        color: #193153; /* Dark Navy for general text */
     }
-    /* Sidebar and other secondary backgrounds */
-    .css-1d391kg, .css-1dp5vir { /* Targeting sidebar and main content blocks */
-        background-color: #193153; /* Bucknell Navy Blue for prominent areas */
-        color: white;
+
+    /* Sidebar Background */
+    [data-testid="stSidebar"] {
+        background-color: #193153 !important;
+        color: white !important;
     }
-    /* Primary accent color (buttons, sliders, etc.) */
-    .stButton>button, .stSlider>.st-da, .stTextInput>div>div>input:focus {
-        background-color: #C63300; /* Bucknell Orange */
-        color: white;
-        border-color: #C63300;
-    }
-    .stButton>button:hover {
-        background-color: #E04400; /* Slightly lighter orange on hover */
-        border-color: #E04400;
-    }
-    /* Text color for main content */
-    .st-emotion-cache-nahz7x, .st-emotion-cache-nahz7x p {
-        color: #193153; /* Darker text for readability */
-    }
-    /* Header and subheader colors */
+
+    /* Headers */
     h1, h2, h3, h4, h5, h6 {
-        color: #C63300; /* Bucknell Orange for headers */
+        color: #C63300 !important;
     }
-    /* Labels for input widgets */
-    .st-emotion-cache-gh2jqy {
-        color: #193153; /* Navy for input labels */
+
+    /* Buttons */
+    div[data-testid="stButton"] button {
+        background-color: #C63300 !important;
+        color: white !important;
+        border-color: #C63300 !important;
     }
+    div[data-testid="stButton"] button:hover {
+        background-color: #E04400 !important;
+        border-color: #E04400 !important;
+    }
+
+    /* Sliders */
+    .stSlider > div > div > div[data-testid="stTickBar"] {
+        background-color: #C63300 !important;
+    }
+    .stSlider > div > div > div > div[role="slider"] {
+        background-color: #C63300 !important;
+        border-color: #C63300 !important;
+    }
+
+    /* Input Labels */
+    label {
+        color: #193153 !important;
+    }
+
+    /* Text and Number Input fields */
+    div[data-testid="stTextInput"] input,
+    div[data-testid="stNumberInput"] input {
+        border-color: #193153 !important; /* Navy border for input fields */
+        color: #193153 !important; /* Navy text color in inputs */
+    }
+    div[data-testid="stTextInput"] input:focus,
+    div[data-testid="stNumberInput"] input:focus {
+        border-color: #E04400 !important;
+        box-shadow: 0 0 0 0.2rem rgba(198, 51, 0, 0.25) !important;
+    }
+
+    /* Selectbox */
+    div[data-testid="stSelectbox"] div[role="button"] {
+        border-color: #193153 !important;
+        color: #193153 !important;
+    }
+    div[data-testid="stSelectbox"] div[role="button"]:focus {
+        border-color: #E04400 !important;
+        box-shadow: 0 0 0 0.2rem rgba(198, 51, 0, 0.25) !important;
+    }
+    div[data-testid="stSelectbox"] div[role="listbox"] {
+        background-color: #f0f2f6 !important;
+        color: #193153 !important;
+    }
+    div[data-testid="stSelectbox"] div[role="option"]:hover {
+        background-color: #C63300 !important;
+        color: white !important;
+    }
+
+    /* Metrics */
+    div[data-testid="stMetricValue"] {
+        color: #C63300 !important; /* Orange for metric values */
+    }
+    div[data-testid="stMetricLabel"] span {
+        color: #193153 !important; /* Navy for metric labels */
+    }
+
     </style>
     """,
     unsafe_allow_html=True
