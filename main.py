@@ -151,7 +151,7 @@ if st.button("Run Risk Simulation", type="primary", use_container_width=True):
     scaled_poly_X = scaler_poly.transform(aligned_poly_df)
 
     # E. Make Predictions
-    prob_default = dtc_model.predict_proba(scaled_class_X)[0][1]
+    prob_default = dtc_model.predict_proba(aligned_class_df)[0][1]
 
     poly_features = poly_maker.transform(scaled_poly_X)
 
