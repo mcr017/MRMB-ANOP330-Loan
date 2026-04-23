@@ -139,7 +139,7 @@ if st.button("Run Risk Simulation", type="primary", use_container_width=True):
     raw_df = raw_df.drop('annual_inc', axis=1)
 
     categorical_cols = raw_df.select_dtypes(include=['object']).columns.tolist()
-    encoded_df = pd.get_dummies(raw_df, columns=categorical_cols, drop_first=True)
+    encoded_df = pd.get_dummies(raw_df, columns=categorical_cols)
 
     # C. Align columns for the Classifier
     # Reindex ensures the incoming dummy columns perfectly match the training columns. Missing columns get filled with 0.
