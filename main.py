@@ -20,86 +20,84 @@ PROFIT_THRESHOLD = 0.30
 st.markdown(
     """
     <style>
-    /* Overall App Background */
+    /* ── App background ── */
     .stApp {
         background-color: #f0f2f6;
-        color: #193153; /* Dark Navy for general text */
     }
-
-    /* Sidebar Background */
+ 
+    /* ── Sidebar background ── */
     [data-testid="stSidebar"] {
-        background-color: #193153 !important;
+        background-color: #193153;
+        color: white;
+    }
+    [data-testid="stSidebar"] * {
         color: white !important;
     }
-
-    /* Headers */
+ 
+    /* ── Top toolbar / header bar ── */
+    [data-testid="stHeader"] {
+        background-color: #193153;
+    }
+ 
+    /* ── All headings → Bucknell Orange ── */
     h1, h2, h3, h4, h5, h6 {
         color: #C63300 !important;
     }
-
-    /* Buttons */
-    div[data-testid="stButton"] button {
-        background-color: #C63300 !important;
-        color: white !important;
-        border-color: #C63300 !important;
+ 
+    /* ── Body text & labels → Navy ── */
+    p, label, .stMarkdown, div[data-testid="stText"] {
+        color: #193153;
     }
-    div[data-testid="stButton"] button:hover {
+ 
+    /* ── Widget labels (selectbox, number input, etc.) ── */
+    [data-testid="stWidgetLabel"] p,
+    [data-testid="stWidgetLabel"] label {
+        color: #193153 !important;
+        font-weight: 600;
+    }
+ 
+    /* ── Primary button → Orange ── */
+    .stButton > button[kind="primary"] {
+        background-color: #C63300 !important;
+        border-color: #C63300 !important;
+        color: white !important;
+    }
+    .stButton > button[kind="primary"]:hover {
         background-color: #E04400 !important;
         border-color: #E04400 !important;
     }
-
-    /* Sliders */
-    .stSlider > div > div > div[data-testid="stTickBar"] {
-        background-color: #C63300 !important;
-    }
-    .stSlider > div > div > div > div[role="slider"] {
-        background-color: #C63300 !important;
-        border-color: #C63300 !important;
-    }
-
-    /* Input Labels */
-    label {
-        color: #193153 !important;
-    }
-
-    /* Text and Number Input fields */
-    div[data-testid="stTextInput"] input,
-    div[data-testid="stNumberInput"] input {
-        border-color: #193153 !important; /* Navy border for input fields */
-        color: #193153 !important; /* Navy text color in inputs */
-    }
-    div[data-testid="stTextInput"] input:focus,
-    div[data-testid="stNumberInput"] input:focus {
-        border-color: #E04400 !important;
-        box-shadow: 0 0 0 0.2rem rgba(198, 51, 0, 0.25) !important;
-    }
-
-    /* Selectbox */
-    div[data-testid="stSelectbox"] div[role="button"] {
+ 
+    /* ── Secondary / default buttons → Navy outline ── */
+    .stButton > button:not([kind="primary"]) {
         border-color: #193153 !important;
         color: #193153 !important;
     }
-    div[data-testid="stSelectbox"] div[role="button"]:focus {
-        border-color: #E04400 !important;
-        box-shadow: 0 0 0 0.2rem rgba(198, 51, 0, 0.25) !important;
-    }
-    div[data-testid="stSelectbox"] div[role="listbox"] {
-        background-color: #f0f2f6 !important;
-        color: #193153 !important;
-    }
-    div[data-testid="stSelectbox"] div[role="option"]:hover {
-        background-color: #C63300 !important;
+    .stButton > button:not([kind="primary"]):hover {
+        background-color: #193153 !important;
         color: white !important;
     }
-
-    /* Metrics */
-    div[data-testid="stMetricValue"] {
-        color: #C63300 !important; /* Orange for metric values */
+ 
+    /* ── Input fields: border accent on focus ── */
+    input:focus, textarea:focus, select:focus {
+        border-color: #C63300 !important;
+        box-shadow: 0 0 0 1px #C63300 !important;
     }
-    div[data-testid="stMetricLabel"] span {
-        color: #193153 !important; /* Navy for metric labels */
+ 
+    /* ── Metric cards ── */
+    [data-testid="stMetric"] {
+        background-color: #193153;
+        border-radius: 8px;
+        padding: 12px 16px;
     }
-
+    [data-testid="stMetricLabel"] p,
+    [data-testid="stMetricValue"]  p {
+        color: white !important;
+    }
+ 
+    /* ── Divider color ── */
+    hr {
+        border-color: #C63300;
+    }
     </style>
     """,
     unsafe_allow_html=True
